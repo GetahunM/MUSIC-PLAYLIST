@@ -15,7 +15,7 @@ struct Song {
 class Playlist {
 private:
   Song* head; // Pointer to the first song
-    int count;  // Track number of songs
+    int count;  // Tracing number of songs
 
 public:
     Playlist() : head(nullptr), count(0) {}
@@ -47,7 +47,7 @@ public:
             current->next = newSong;
         }
         count++;
-        cout << "\"" << title << "\" added to end.\n";
+        cout << "\"" << title << "\" added song to end.\n";
     }
 
     // Add song at specific position
@@ -156,7 +156,7 @@ cout << "\n===== YOUR PLAYLIST (" << count << " songs) =====\n";
             cout << pos++ << ". " << current->title << " - " << current->artist << "\n";
             current = current->next;
         }
-        cout << "==============================\n";
+        cout << "===============================\n";
     }
 
     // Additional feature: Clear entire playlist
