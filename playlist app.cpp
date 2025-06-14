@@ -9,7 +9,7 @@ struct Song {
      Song* next;
 
     // Constructor to initialize song
-    Song(string t, string a) : tile(t), artist(a), next(nullptr) {}
+    Song(string t, string a) : title(t), artist(a), next(nullptr) {}
 };
 
 class Playlist {
