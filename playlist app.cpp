@@ -98,7 +98,7 @@ public:
             return;
         }
 
-        f (head->next == nullptr) {
+        if. (head->next == nullptr) {
             removeFirst();
             return;
         }
