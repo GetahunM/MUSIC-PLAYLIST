@@ -88,7 +88,7 @@ public:
         head = head->next;
         cout << "Removed: \"" << temp->title << "\"\n";
         delete temp;
-        count--
+        count--;
     }
 
     // Remove last song
