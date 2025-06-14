@@ -201,3 +201,89 @@ cout << "\n===== YOUR PLAYLIST (" << count << " songs) =====\n";
         cout << minutes << " minute" << (minutes != 1 ? "s" : "") << "\n";
     }
 };
+// Display menu options
+void showMenu() {
+    cout << "\n=== MUSIC PLAYLIST MANAGER ===\n";
+    cout << "1. Add song to front\n";
+    cout << "2. Add song to end\n";
+    cout << "3. Add song at position\n";
+    cout << "4. Remove first song\n";
+    cout << "5. Remove last song\n";
+    cout << "6. Remove song at position\n";
+    cout << "7. Display playlist\n";
+    cout << "8. Clear playlist\n";
+    cout << "9. Search for song\n";
+    cout << "10. Get playlist duration\n";
+    cout << "0. Exit\n";
+    cout << "Enter choice: ";
+}
+
+int main() {
+    Playlist myPlaylist;
+    int choice, position;
+    string title, artist;
+
+    do {
+        showMenu();
+        cin >> choice;
+        cin.ignore(); // Clear input buffer
+
+        switch (choice) {
+            case 1:
+                cout << "Enter song title: ";
+                getline(cin, title);
+                cout << "Enter artist: ";
+                getline(cin, artist);
+                myPlaylist.addToFront(title, artist);
+                break;
+            case 2:
+                cout << "Enter song title: ";
+                getline(cin, title);
+                cout << "Enter artist: ";
+                getline(cin, artist);
+                myPlaylist.addToEnd(title, artist);
+                break;
+            case 3:
+                cout << "Enter song title: ";
+                getline(cin, title);
+                cout << "Enter artist: ";
+                getline(cin, artist);
+                cout << "Enter position: ";
+                cin >> position;
+                myPlaylist.addAtPosition(title, artist, position);
+                break;
+            case 4:
+                myPlaylist.removeFirst();
+                break;
+            case 5:
+                myPlaylist.removeLast();
+                break;
+            case 6:
+                cout << "Enter position to remove: ";
+                cin >> position;
+                myPlaylist.removeAtPosition(position);
+                break;
+            case 7:
+                myPlaylist.display();
+                break;
+            case 8:
+                myPlaylist.clearPlaylist();
+                break;
+                case 9:
+                cout << "Enter song title to search: ";
+                getline(cin, title);
+                myPlaylist.searchSong(title);
+                break;
+            case 10:
+                myPlaylist.getDuration();
+                break;
+            case 0:
+                cout << "Goodbye! Thanks for using the playlist manager.\n";
+                break;
+            default:
+                cout << "Invalid choice! Please try again.\n";
+        }
+    } while (choice != 0);
+
+    return 0;
+}
