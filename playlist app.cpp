@@ -108,7 +108,7 @@ public:
             current = current->next;
         }
         Song* temp = current->next;
-        current->next = nullptr
+        current->next = nullptr;
         cout << "Removed: \"" << temp->title << "\"\n";
         delete temp;
         count--;
@@ -118,7 +118,7 @@ public:
     void removeAtPosition(int pos) {
         if (pos < 1 || pos > count) {
             cout << "Invalid position! Current playlist has " << count << " songs.\n";
-            return
+            return;
         }
 
         if (pos == 1) {
@@ -198,7 +198,6 @@ cout << "\n===== YOUR PLAYLIST (" << count << " songs) =====\n";
         
         cout << "Estimated playlist duration: ";
         if (hours > 0) cout << hours << " hour" << (hours > 1 ? "s " : " ");
-        cot << minutes << " minute" << (minutes != 1 ? "s" : "") << "\n";
+        cout << minutes << " minute" << (minutes != 1 ? "s" : "") << "\n";
     }
 };
-
