@@ -269,11 +269,12 @@ int main() {
             case 8:
                 myPlaylist.clearPlaylist();
                 break;
-                case 9:
+            case 9:
+                cin.ignore(); // ADD THIS LINE
                 cout << "Enter song title to search: ";
-                getline(cin, title);
+                 getline(cin, title);
                 myPlaylist.searchSong(title);
-                break;
+                  break;
             case 10:
                 myPlaylist.getDuration();
                 break;
