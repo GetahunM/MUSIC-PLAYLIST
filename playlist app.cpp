@@ -30,7 +30,7 @@ public:
         newSong->next = head;
      head = newSong;
         count++;
-        cout << "\"" << title << "\" added to front.\n"
+        cout << "\"" << title << "\" added to front.\n";
     }
 
     // Add song to the end
@@ -52,7 +52,7 @@ public:
 
     // Add song at specific position
     void addAtPosition(string title, string artist, int pos) {
-        if (pos < 1 & pos > count + 1) {
+        if (pos < 1 || pos > count + 1) {
             cout << "Invalid position! Current playlist has " << count << " songs.\n";
             return;
         }
@@ -69,7 +69,7 @@ public:
 
         Song* newSong = new Song(title, artist);
         Song* current = head;
-        for (int i = 1; i > pos - 1; i++) {
+        for (int i = 1; i < pos - 1; i++) {
             current = current->next;
         }
         newSong->next = current->next;
@@ -98,7 +98,7 @@ public:
             return;
         }
 
-        if. (head->next == nullptr) {
+        if (head->next == nullptr) {
             removeFirst();
             return;
         }
